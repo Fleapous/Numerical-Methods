@@ -1,7 +1,14 @@
-function [outputArg1,outputArg2] = Hessenberg(inputArg1,inputArg2)
-%HESSENBERG Summary of this function goes here
-%   Detailed explanation goes here
-outputArg1 = inputArg1;
-outputArg2 = inputArg2;
+function H = Hessenberg(n, use_integers)
+% Initialize the matrix with random values
+if use_integers
+    H = randi([0 9], n);
+else
+    H = rand(n);
 end
+
+H = triu(H,-1);
+end
+
+
+
 
