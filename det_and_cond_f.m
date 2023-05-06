@@ -9,14 +9,13 @@ det = determinant(B, number_of_swaps);
 fro_norm = frobenius_norm(A);
 
 %inverting A 
-%invert A can be done using partial pivoting
-% X is the matrix of unknowns representing the columns of A^{-1}
-%P^-1 is the inverse of the permutation matrix P
-%PAX = I_n => LUX = P^-1*I_n
+Ainv = invert_matrix(A);
 
 %find ||A^-1||F
+fro_norm_inv = frobenius_norm(Ainv);
 
 %find condF
 %cond = ||A||F + ||A^-1||F
+cond = fro_norm + fro_norm_inv;
 end
 
