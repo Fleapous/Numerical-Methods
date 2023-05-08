@@ -1,4 +1,4 @@
-function Ainv = invert_hessenberg(A)
+function [Ainv, I] = invert_hessenberg(A)
 % Compute the inverse of matrix A using Gaussian elimination.
 
 % Augment A with the identity matrix.

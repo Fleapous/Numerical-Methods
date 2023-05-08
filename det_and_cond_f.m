@@ -1,18 +1,15 @@
 function [det,cond] = det_and_cond_f(A)
 
+[U, num_swaps, Hinv] = gaussian_elim(A);
+
 %finding the det(A)
-[B, number_of_swaps] = gauss_elim_partial(A);
-det = determinant(B, number_of_swaps);
-
-% finding the ||A||F
-% basic formula for calculating the f norm is sqrt(sum_i, sum_j (a_ij)^2)
-fro_norm = frobenius_norm(A);
-
-%inverting A 
-Ainv = invert_hessenberg(A);
+det = determinant(U, num_swaps);
 
 %find ||A^-1||F
-fro_norm_inv = frobenius_norm(Ainv);
+fro_norm_inv = frobenius_norm(Hinv);
+
+% finding the ||A||F
+fro_norm = frobenius_norm(A);
 
 %find condF
 %cond = ||A||F * ||A^-1||F
