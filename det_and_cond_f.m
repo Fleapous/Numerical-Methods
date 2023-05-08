@@ -1,4 +1,4 @@
-function [det,cond] = det_and_cond_f(A)
+function [det,cond, U, Hinv] = det_and_cond_f(A)
 
 [U, num_swaps, Hinv] = gaussian_elim(A);
 
