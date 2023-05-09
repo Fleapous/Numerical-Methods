@@ -12,9 +12,9 @@ function [cond, relative_err, forward_stability_err, backWard_stability_err, lef
         [cond, relative_err, forward_stability_err, backWard_stability_err, left_residual_err, det_calculated, det_bin, condf_calculated, condf_bin] = test2_sub(H2, H2inv, H2det);
     end
     if type == "H3"
-        H3 = [1 2 3 0; 0 5 6 7; 0 8 0 10; 0 0 11 12];
-        H3inv = [1.0000   -0.9961    0.3725    0.2706; 0    0.2157   -0.0098   -0.1176; 0    0.1882   -0.1176   -0.0118; 0   -0.1725    0.1078    0.0941];
-        H3det = -510.0000;
+        H3 = [ 1, 2, 3, 0, 0, 0; 4, 5, 6, 7, 0, 0; 0, 8, 9,10,11, 0; 0, 0,12,13,14,15; 0, 0, 0,16,17,18; 0, 0, 0, 0,19,20 ];
+        H3inv = [ -1.6521    0.6630   -0.0014    0.0825   -0.3563    0.2588; 1.3464   -0.3366   -0.0012   -0.1674    0.2840   -0.1301; -0.0135    0.0034    0.0013    0.0841   -0.0706    0.0005; -0.0060    0.0015    0.0006    0.0003    0.0612   -0.0553; -0.9626    0.2407    0.0902    0.0526   -0.2045    0.1445; 0.9145   -0.2286   -0.0857   -0.0500    0.1942   -0.0873];
+        H3det = -1.2765e+05;
         [cond, relative_err, forward_stability_err, backWard_stability_err, left_residual_err, det_calculated, det_bin, condf_calculated, condf_bin] = test2_sub(H3, H3inv, H3det);
     end
 end
